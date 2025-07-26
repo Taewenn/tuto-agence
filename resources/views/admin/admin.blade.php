@@ -39,6 +39,18 @@
                     </li>
                 </ul>
             </div>
+            <div class="d-flex ms-auto align-items-center gap-3">
+                @auth
+                    <span class="nav-link text-white">
+                        {{ Auth::user()->email }}
+                    </span>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="nav-link text-white">Se déconnecter</button>
+                    </form>
+                @endauth
+            </div>
         </div>
     </nav>
 
