@@ -81,6 +81,7 @@
             ])
         </div>
 
+        @include('shared.select', ['name' => 'options', 'label' => 'Options', 'options' => $options, 'value' => $property->options->pluck('id'), 'multiple' => true])
 
         @include('shared.checkbox', [
             'name' => 'sold',
